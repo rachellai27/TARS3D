@@ -1,0 +1,123 @@
+H: 128
+W: 128
+arch:
+    deformnet:
+        interm_coord: true
+        layers_hyper:
+        - null
+        - 256
+        - 256
+        - 256
+        - null
+        layers_impl:
+        - null
+        - 64
+        - 64
+        - 64
+        - 64
+        layers_pts_deformations:
+        - null
+        - 3
+        layers_pts_feat:
+        - null
+        - 4
+        layers_rgb:
+        - null
+        - 3
+    renderer:
+        lstm_dim: 32
+    sdf_generator:
+        interm_coord: true
+        layers_hyper:
+        - null
+        - 256
+        - null
+        layers_impl:
+        - null
+        - 64
+        - 64
+        - 64
+        - 64
+        layers_level:
+        - null
+        - 1
+        layers_rgb:
+        - null
+        - 3
+batch_size: 1
+camera:
+    dist: 2.5
+    model: orthographic
+cpu: false
+data:
+    augment:
+        brightness: null
+        contrast: null
+        crop_scale: null
+        hflip: null
+        hue: null
+        rotate: null
+        saturation: null
+    dataset: dresscode
+    dataset_root_path: /common/home/rl932/
+    num_workers: 4
+    preload: false
+    train_sub: null
+    val_sub: null
+device: cpu
+eval:
+    icp: false
+    num_points: 100000
+    range:
+    - -1.2
+    - 1.2
+    vox_res: 64
+evaluation: null
+freq:
+    ckpt: 5
+    ckpt_latest: 2000
+    eval: 1000
+    scalar: 100
+    vis: 100
+gpu: 0
+group: dresscode/pretrain_sdf_generator
+image_size:
+- 128
+- 128
+impl:
+    posenc_L: 5
+    pretrain_radius: 1.0
+    sdf_range:
+    - -2
+    - 2
+is_stage_two_active: null
+latent_dim: 256
+latent_std: 1.0
+load: null
+loss_weight:
+    sphere: 1
+    symmetry_loss: null
+max_epoch: 1000
+max_iter: 4000
+model: pretrain_sdf_generator
+name: dresscode
+optim:
+    algo: Adam
+    lr: 0.0001
+    sched: {}
+output_path: output/dresscode/pretrain_sdf_generator/dresscode
+output_root: output
+pts_feat_dim: 4
+pts_feat_pos_enc_dim: 1
+resume: false
+seed: 0
+tb:
+    num_images:
+    - 4
+    - 8
+visdom:
+    num_points: 20000
+    num_samples: 1
+    port: 9001
+    server: localhost
+yaml: configs/dresscode/pretrain_sdf_generator.yaml

@@ -8,6 +8,7 @@ seed: 0
 gpu: 0
 cpu: false
 load:
+device: 0
 
 image_size: [128, 128] #
 
@@ -15,7 +16,7 @@ arch: {}
 
 data:
     dataset:
-    dataset_root_path:  ./datasets/
+    dataset_root_path:  /common/home/rl932/
     num_workers: 4
     preload: false
     augment:
